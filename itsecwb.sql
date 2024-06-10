@@ -1,0 +1,20 @@
+DROP DATABASE ITSECWB_DB;
+CREATE DATABASE ITSECWB_DB;
+USE ITSECWB_DB;
+
+CREATE TABLE ITSECWB_DB.users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL UNIQUE,
+    profile_photo VARCHAR(45) NOT NULL,
+    role ENUM('admin', 'user') NOT NULL DEFAULT 'user' 
+);
+
+CREATE USER IF NOT EXISTS 'itsecur'@'%' IDENTIFIED BY 'lingui250!';
+
+GRANT SELECT, UPDATE, INSERT, DELETE ON ITSECWB_DB.* TO 'itsecur'@'%';
+
+INSERT INTO `users` VALUES (1,'admin','admin','admin@email.com','$2b$10$WlbczTEc7Zv8e.fDAM6tEOPyiFddIMTz0RPNceinvefmZedEt002C','09999999999','1718007341558.png','admin');

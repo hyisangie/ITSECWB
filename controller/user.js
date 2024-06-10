@@ -21,8 +21,6 @@ const user = {
     },
 
     render_profile: async function (req, res) {
-        if (!req.session.user) res.redirect('/login');
-        console.log(req.session.user)
         res.render('profile', { user: req.session.user });
     },
 
@@ -66,7 +64,8 @@ const user = {
     },
 
     create_user: async function (req, res) {
-        const { firstname, lastname, email, phone, password, confirmPassword } = req.body;
+        const { firstname, lastname, email, password, confirmPassword } = req.body;
+        let phone = req.body.phone;
 
         // Input validation
         if (!firstname || !lastname || !email || !phone || !password || !confirmPassword) return res.status(400).send('All fields are required.');
@@ -79,6 +78,9 @@ const user = {
         if (!emailRegex.test(email)) return res.status(400).send('Invalid email format.');
 
         if (!phoneRegex.test(phone)) return res.status(400).send('Invalid phone number format.');
+
+        if (phone.startsWith('9')) phone = '0' + phone;
+        if (phone.startsWith('+63')) phone = '0' + phone.substring(3);
 
         // Check if email already exists
         User.findByEmail(email, async (err, results) => {
@@ -108,7 +110,7 @@ const user = {
         if(req.session){ //If session exists
             req.session.destroy(()=>{ //Destroy current session
                 res.clearCookie('connect.sid'); //Clear cookie data
-                res.redirect('/login'); //Return to login screen
+                res.redirect('/'); //Return to login screen
             });
         }
     }

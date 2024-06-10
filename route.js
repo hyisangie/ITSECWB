@@ -4,6 +4,7 @@ const path = require('path');
 
 const upload = require('./middlewares/upload.js');
 const loginAttempts = require('./middlewares/loginattempts.js');
+const { checkAuth, isAuth } = require('./middlewares/session.js');
 
 const user = require('./controller/user');
 
@@ -17,12 +18,12 @@ router.post('/register-user', (req, res, next) => {
     });
 }, user.create_user);
 
-router.get('/login', user.render_login);
+router.get('/', user.render_login);
 router.post('/login-user', loginAttempts, user.loginUser);
 
-router.get('/profile', user.render_profile);
+router.get('/profile', isAuth, user.render_profile);
 
-router.get('/admin', user.render_admin);
+router.get('/admin', checkAuth, user.render_admin);
 
 router.get('/logout', user.logoutUser);
 
