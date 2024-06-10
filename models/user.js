@@ -11,6 +11,11 @@ const User = {
         db.query(query, [email], callback);
     },
 
+    findByPhone: (phone, callback) => {
+        const query = `SELECT * FROM users WHERE phone = ?`;
+        db.query(query, [phone], callback);
+    },
+
     get_users: () => {
         return new Promise((resolve, reject) => {
             const query = 'SELECT * FROM users'; // Replace 'users' with your table name

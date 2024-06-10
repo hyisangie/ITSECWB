@@ -20,19 +20,29 @@
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" name="confirmPassword" required /><br>
     
-    <p id="error-message"></p>
+    <% if (error) { %>
+        <p id="error" style="color: red;"><%= error %></p>
+    <% } %>
 
     <button type="submit" id="register-button" name="register-button">Register</button>
 </form>
 
 
 <script>
+    // window.onload = function() {
+    //         const urlParams = new URLSearchParams(window.location.search);
+    //         const error = urlParams.get('error');
+    //         if (error) {
+    //             document.getElementById('error').innerText = error;
+    //         }
+    //     };
+
     document.getElementById('image-form').addEventListener('submit', function(event) {
         event.preventDefault();  // Prevent the default form submission initially
 
         const imageInput = document.getElementById('profilePhoto');
         const file = imageInput.files[0];
-        const errorMessage = document.getElementById('error-message');
+        const errorMessage = document.getElementById('error');
 
         if (!file) {
             errorMessage.textContent = 'Please select an image file.';
@@ -53,7 +63,7 @@
 
     function checkMagicNumber(file, callback) {
         const reader = new FileReader();
-        const errorMessage = document.getElementById('error-message');
+        const errorMessage = document.getElementById('error');
 
         reader.onloadend = function(e) {
             const arr = (new Uint8Array(e.target.result)).subarray(0, 4);
@@ -73,7 +83,7 @@
                     isValid = true;
                     break;
                 default:
-                    errorMessage.textContent = 'Invalid image file type based on magic number.';
+                    errorMessage.textContent = 'Invalid image file type';
                     isValid = false;
                     break;
             }
