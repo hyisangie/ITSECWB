@@ -5,6 +5,5 @@ module.exports = (req, res, next) => {
         req.flash('error', 'Too many login attempts. Please try again later.');
         return res.redirect('/');
     }
-
     next();
 };
