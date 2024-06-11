@@ -142,7 +142,7 @@ const user = {
     logout_user: function(req, res){
         if (req.session) {
             req.session.destroy(() => { // Destroy current session
-                res.clearCookie('connect.sid'); // Clear cookie data
+                // res.clearCookie('connect.sid'); // Clear cookie data
             });
         }
         res.redirect('/');
