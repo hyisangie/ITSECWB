@@ -1,19 +1,26 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const logger = require("../utils/logger");
 
-const User = require("../models/User");
+const User = require("../models/user");
+const Item = require("../models/item");
+
+const LOGGED_IN = 1;
+const LOGGED_OUT = 0;
 
 const user = {
     render_register: async function (req, res) {
-        res.render("register", { error: req.flash("error") });
+        const error = req.flash('error');
+        res.render("register",  { error: error.length ? error[0] : null });
     },
 
     render_login: async function (req, res) {
         res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         res.setHeader("Pragma", "no-cache");
         res.setHeader("Expires", "0");
-        res.render("login", { error: req.flash("error") });
+        const errorMessage = req.flash('error');
+        res.render("login", { error: errorMessage });
     },
 
     render_admin: async function (req, res) {
@@ -32,10 +39,9 @@ const user = {
         res.render("profile", { user: req.session.user });
     },
 
-    render_homepage: async function (req, res) {
+    render_index: async function (req, res) {
         if (req.session.user) {
-        if (req.session.user.role === "admin") res.redirect("/admin");
-        else if (req.session.user.role === "user") res.redirect("/profile");
+            res.redirect("/applications")
         } else res.redirect("/login");
     },
 
@@ -75,9 +81,11 @@ const user = {
             }
 
             req.session.loginAttempts = 0;
+
             req.session.user = user;
-            if (user.role === "admin") res.redirect("admin");
-            else res.redirect("profile");
+            req.session.lastActivity = new Date().getTime();
+            logger.authenticateUser(req.session.user.email, LOGGED_IN);
+            res.redirect("/");
         });
     },
 
@@ -162,10 +170,11 @@ const user = {
 
     logout_user: function (req, res) {
         if (req.session) {
-        req.session.destroy(() => {
-            // Destroy current session
-            // res.clearCookie("connect.sid"); // Clear cookie data
-        });
+            logger.authenticateUser(req.session.user.email, LOGGED_OUT);
+            req.session.destroy(() => {
+                // Destroy current session
+                // res.clearCookie("connect.sid"); // Clear cookie data
+            });
         }
         res.redirect("/");
     },

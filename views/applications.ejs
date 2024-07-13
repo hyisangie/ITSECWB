@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationery Application System</title>
+</head>
+<body>
+    <h1>Stationery Application System</h1>
+    <p>Welcome, <%= user.email %> </p>
+    <p>
+    <% if (user.role == "admin") { %>
+        <a href="/admin">Admin Panel</a>
+    <% } else { %>
+        <a href="/request-form">Request</a>
+    <% }%>
+     | 
+     <a href="/profile">Profile</a>
+     | 
+     <a href="/logout">Logout</a>
+    </p>
+
+    <form action="/applications" method="GET">
+        <label for="status">Filter by status:</label>
+        <select name="status" id="status">
+            <option value="">All</option>
+            <option value="pending" <%= currentStatus === 'pending' ? 'selected' : '' %>>Pending</option>
+            <option value="processing" <%= currentStatus === 'processing' ? 'selected' : '' %>>Processing</option>
+            <option value="ready" <%= currentStatus === 'ready' ? 'selected' : '' %>>Ready</option>
+            <option value="completed" <%= currentStatus === 'completed' ? 'selected' : '' %>>Completed</option>
+            <option value="rejected" <%= currentStatus === 'rejected' ? 'selected' : '' %>>Rejected</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <% if (typeof applications !== 'undefined' && applications.length > 0) { %>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Applicant</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Purpose</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <% applications.forEach(function(app) { %>
+                <tr>
+                    <td><%= app.id %></td>
+                    <td><%= app.applicant_email %></td>
+                    <td><%= app.item_name %></td>
+                    <td><%= app.quantity %></td>
+                    <td><%= app.purpose %></td>
+                    <td><%= app.status %></td>
+                    <% if (user.role == "admin") { %>
+                        <td>
+                            <% if (app.status === 'rejected') { %>
+                                Rejected
+                            <% } else if (app.status === 'completed'){ %>
+                                Completed
+                            <% } else { %>
+                                <form action="/update-status/<%= app.id %>" method="POST">
+                                    <select name="status">
+                                        <% if (app.status === 'pending') { %>
+                                            <option value="processing">Set to Processing</option>
+                                            <option value="rejected">Set to Reject</option>
+                                        <% } else if (app.status === 'processing') { %>
+                                            <option value="ready">Set to Ready</option>
+                                        <% } else if (app.status === 'ready') { %>
+                                            <option value="completed">Set to Completed</option>
+                                        <% } %>
+                                    </select>
+                                    <button type="submit">Update</button>
+                                </form>
+                            <% } %>
+                        </td>
+                    <% } else if(app.status === 'pending') {%>
+                        <td>
+                            <a href="/edit-form?id=<%= app.id %>">Edit</a>
+                        </td>
+                    <% } else { %>
+                        <td>-</td>
+                    <% } %>
+                </tr>
+            <% }); %>
+        </table>
+    <% } else { %>
+        <p>No applications found.</p>
+    <% } %>
+</body>
+</html>

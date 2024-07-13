@@ -11,6 +11,7 @@ const {
 } = require("./middlewares/session.js");
 
 const user = require("./controller/user");
+const application = require("./controller/application");
 
 router.get("/register", user.render_register);
 router.post(
@@ -20,13 +21,15 @@ router.post(
     user.create_user,
     (error, req, res, next) => {
         if (error) {
-        req.flash("error", error.message);
-        return res.redirect("/register");
+          req.flash("error", error.message);
+          const err = new Error();
+          err.status = 500
+          return res.redirect("/register");
         }
     }
 );
 
-router.get("/", user.render_homepage);
+router.get("/", user.render_index);
 
 router.get("/login", checkAuthinLogin, user.render_login);
 router.post("/login-user", loginAttempts, user.login_user);
@@ -36,5 +39,12 @@ router.get("/profile", isAuth, user.render_profile);
 router.get("/admin", checkAuth, user.render_admin);
 
 router.get("/logout", user.logout_user);
+
+router.get("/request-form", isAuth, application.render_request_form);
+router.post("/apply", isAuth, application.apply);
+router.get("/applications", isAuth, application.render_application);
+router.post("/update-status/:id", checkAuth, application.change_status);
+router.get("/edit-form", isAuth, application.render_request_form);
+router.post("/update-application/:id", isAuth, application.update_application);
 
 module.exports = router;

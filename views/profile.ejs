@@ -1,11 +1,27 @@
-<h1>User Profile</h1>
-    <div>
-        <img src="/uploads/<%= user.profile_photo  %>" alt="Profile Photo" width="150">
-    </div>
-    <div>
-        <p><strong>Full Name:</strong> <%= user.firstname  %></p>
-        <p><strong>Email:</strong> <%= user.email %></p>
-        <p><strong>Phone:</strong> <%= user.phone %></p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationery Application System</title>
+</head>
+<body>
+    <h1>Stationery Application System</h1>
+    <p>
+     <a href="/applications">Application List</a>
+     | 
+     <a href="/logout">Logout</a>
+    </p>
 
-<a href="/logout">logout</a>
+    <h2>User Profile</h2>
+        <div>
+            <img src="/uploads/<%= user.profile_photo  %>" alt="Profile Photo" width="150">
+        </div>
+        <div>
+            <p><strong>Full Name:</strong> <%= user.firstname  %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Phone:</strong> <%= user.phone %></p>
+        </div>
+
+</body>
+</html>
