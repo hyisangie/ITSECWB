@@ -26,13 +26,6 @@ function authenticateUser(username, status) {
   }
 }
 
-// simulate transaction
-function performTransaction(userId, details) {
-  const transactionId = new Date().toISOString().replace(/[-:.]/g, "");
-  log("Transaction", userId, `Details: ${details}`);
-  return transactionId;
-}
-
 // simulate admin action
 function adminAction(adminId, action) {
   log("Admin Action", adminId, `Performed action: ${action}`);
@@ -41,7 +34,6 @@ function adminAction(adminId, action) {
 // 导出函数供其他模块使用
 module.exports = {
   authenticateUser,
-  performTransaction,
   adminAction,
   log
 };

@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 
 const { upload, checkMagicNumber } = require("./middlewares/upload.js");
 const loginAttempts = require("./middlewares/loginattempts.js");
@@ -46,5 +45,10 @@ router.get("/applications", isAuth, application.render_application);
 router.post("/update-status/:id", checkAuth, application.change_status);
 router.get("/edit-form", isAuth, application.render_request_form);
 router.post("/update-application/:id", isAuth, application.update_application);
+
+// Handle 404 - Not Found
+router.use((req, res, next) => {
+  res.status(404).render("404"); // assuming you have a 404.ejs file in your views directory
+});
 
 module.exports = router;
