@@ -12,9 +12,15 @@ const user = {
     render_register: async function (req, res) {
         try{
             const error = req.flash('error');
+            if(req.session.user !== undefined && req.session.user.role === "admin") {
+                logger.adminAction(req.session.user, "Render register page.")
+            } else {
+                logger.log("Render Page", req.session.user, "Render register page.")
+            }
             res.render("register",  { error: error.length ? error[0] : null });
         } catch(err) {
             handleError(err);
+            logger.log("Error", req.session.user, "Render register page: " + err.stack)
             return res.render('404');
         }
     },
@@ -25,9 +31,16 @@ const user = {
             res.setHeader("Pragma", "no-cache");
             res.setHeader("Expires", "0");
             const errorMessage = req.flash('error');
+            if(req.session.user !== undefined && req.session.user.role === "admin") {
+                logger.adminAction(req.session.user, "Render login page.")
+            } else {
+                logger.log("Render Page", req.session.user, "Render login page.")
+            }
+            
             res.render("login", { error: errorMessage });
         } catch(err) {
             handleError(err);
+            logger.log("Error", req.session.user, "Render login page: " + err.stack)
             return res.render('404');
         }
 
@@ -39,10 +52,15 @@ const user = {
             res.setHeader("Pragma", "no-cache");
             res.setHeader("Expires", "0");
             const users = await User.get_users();
-    
+            if(req.session.user !== undefined && req.session.user.role === "admin") {
+                logger.adminAction(req.session.user, "Render admin page.")
+            } else {
+                logger.log("Render Page", req.session.user, "Render admin page.")
+            }
             res.render("admin", { users });
         }catch(err) {
             handleError(err);
+            logger.log("Error", req.session.user, "Render admin page: " + err.stack)
             return res.render('404');
         }
     },
@@ -52,9 +70,16 @@ const user = {
             res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
             res.setHeader("Pragma", "no-cache");
             res.setHeader("Expires", "0");
+            if(req.session.user !== undefined && req.session.user.role === "admin") {
+                logger.adminAction(req.session.user, "Render profile page.")
+            } else {
+                logger.log("Render Page", req.session.user, "Render profile page.")
+            }
+            
             res.render("profile", { user: req.session.user });
         } catch(err) {
             handleError(err);
+            logger.log("Error", req.session.user, "Render profile page: " + err.stack)
             return res.render('404');
         }
 
@@ -63,10 +88,16 @@ const user = {
     render_index: async function (req, res) {
         try{
             if (req.session.user) {
+                if(req.session.user.role === "admin") {
+                    logger.adminAction(req.session.user, "Render index page.")
+                } else {
+                    logger.log("Render Page", req.session.user, "Render index page.")
+                }
                 res.redirect("/applications")
             } else res.redirect("/login");
         } catch(err) {
             handleError(err);
+            logger.log("Error", req.session.user, "Render index page: " + err.stack)
             return res.render('404');
         }
     },
@@ -111,18 +142,22 @@ const user = {
 
                 req.session.user = user;
                 req.session.lastActivity = new Date().getTime();
-                logger.authenticateUser(req.session.user.email, LOGGED_IN);
+                if(req.session.user !== undefined && req.session.user.role === "admin") {
+                    logger.authenticateUser(req.session.user + "(admin)", LOGGED_IN);
+                } else {
+                    logger.authenticateUser(req.session.user, LOGGED_IN);
+                }
                 res.redirect("/");
             });
         } catch(err) {
             handleError(err);
+            logger.log("Error", req.session.user, "Login Error: " + err.stack)
             return res.render('404');
         }
     },
 
     create_user: async function (req, res) {
         try{
-            let error1;
             const { firstname, lastname, email, password, confirmPassword } = req.body;
             const profilePhoto = req.file ? req.file.filename : null;
             let phone = req.body.phone;
@@ -191,8 +226,10 @@ const user = {
                         if (err) {
                             if (profilePhoto) fs.unlinkSync(path.join(__dirname, "../public/uploads/", profilePhoto));
                             req.flash("error", "Failed to register user.");
+                            logger.log("Create User", req.session.user, "Failed to register user.")
                             return res.redirect("/register");
                         }
+                        logger.log("Create User", req.session.user, "User: " + newUser.email + " Created.")
                         req.flash("success", "User registered successfully.");
                         res.redirect("/");
                     });
@@ -200,6 +237,7 @@ const user = {
             });
         } catch(err) {
             handleError(err)
+            logger.log("Error", req.session.user, "Create User Error: " + err.stack)
             return res.render('404');
         }
     },
@@ -207,15 +245,21 @@ const user = {
     logout_user: function (req, res) {
         try{
             if (req.session) {
-                logger.authenticateUser(req.session.user.email, LOGGED_OUT);
+                if(req.session.user !== undefined && req.session.user.role === "admin") {
+                    logger.authenticateUser(req.session.user + "(admin)", LOGGED_OUT);
+                } else {
+                    logger.authenticateUser(req.session.user, LOGGED_OUT);
+                }
                 req.session.destroy(() => {
                     // Destroy current session
                     // res.clearCookie("connect.sid"); // Clear cookie data
                 });
             }
+            logger.log("Log Out User", req.session.user, "Failed to log out user.")
             res.redirect("/");
         } catch(err) {
             handleError(err)
+            logger.log("Error", req.session.user, "Logout Error: " + err.stack)
             return res.render('404');
         }
     },

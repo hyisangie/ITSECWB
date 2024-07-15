@@ -1,4 +1,13 @@
-2024-07-15T16:37:51.002Z - Authentication - User: admin@email.com - Login successful
-2024-07-15T16:38:05.152Z - Authentication - User: admin@email.com - Logout
-2024-07-15T16:38:09.668Z - Authentication - User: angeline_shi@dlsu.edu.ph - Login successful
-2024-07-15T16:38:21.912Z - Authentication - User: angeline_shi@dlsu.edu.ph - Logout
+2024-07-15T17:20:24.055Z - Render Page - Render login page.
+2024-07-15T17:20:27.666Z - Authentication - User: admin@email.com - Login successful
+2024-07-15T17:20:27.671Z - Render Page - User: admin@email.com - Render index page.
+2024-07-15T17:20:27.675Z - Render Page - User: admin@email.com - Render applications page.
+2024-07-15T17:23:16.133Z - Render Page - Render login page.
+2024-07-15T17:33:22.469Z - Render Page - Render login page.
+2024-07-15T17:33:25.262Z - Authentication - User: undefined - Login successful
+2024-07-15T17:33:25.267Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-15T17:33:25.272Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-15T17:33:33.158Z - Admin Action - User: admin@email.com - Performed action: Status Changed Succesfully.
+2024-07-15T17:33:33.163Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-15T17:33:46.257Z - Admin Action - User: admin@email.com - Performed action: Status Changed Succesfully.
+2024-07-15T17:33:46.262Z - Admin Action - User: admin@email.com - Performed action: Render applications page.

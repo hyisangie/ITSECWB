@@ -4,9 +4,15 @@ const fs = require('fs');
 const logFile = fs.createWriteStream('app.log', { flags: 'a' });
 
 // log function
-function log(eventType, userId, details) {
+function log(eventType, user, details) {
   const timestamp = new Date().toISOString();
-  const logMessage = `${timestamp} - ${eventType} - User: ${userId} - ${details}\n`;
+  var logMessage
+  if(user != undefined) {
+    logMessage = `${timestamp} - ${eventType} - User: ${user.email} - ${details}\n`;
+  } else {
+    logMessage = `${timestamp} - ${eventType} - ${details}\n`;
+  }
+  
   
   // write to file
   logFile.write(logMessage);
@@ -16,19 +22,19 @@ function log(eventType, userId, details) {
 }
 
 // simulate authentication
-function authenticateUser(username, status) {
+function authenticateUser(user, status) {
   if(status == 1) {
-    log("Authentication", username, "Login successful");
+    log("Authentication", user, "Login successful");
   } else if(status == 2){
-    log("Authentication", username, "Login failed");
+    log("Authentication", user, "Login failed");
   } else {
-    log("Authentication", username, "Logout");
+    log("Authentication", user, "Logout");
   }
 }
 
 // simulate admin action
-function adminAction(adminId, action) {
-  log("Admin Action", adminId, `Performed action: ${action}`);
+function adminAction(admin, action) {
+  log("Admin Action", admin, `Performed action: ${action}`);
 }
 
 // 导出函数供其他模块使用
