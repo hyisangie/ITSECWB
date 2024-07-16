@@ -255,7 +255,6 @@ const user = {
                     // res.clearCookie("connect.sid"); // Clear cookie data
                 });
             }
-            logger.log("Log Out User", req.session.user, "Failed to log out user.")
             res.redirect("/");
         } catch(err) {
             handleError(err)

@@ -11,3 +11,27 @@
 2024-07-15T17:33:33.163Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
 2024-07-15T17:33:46.257Z - Admin Action - User: admin@email.com - Performed action: Status Changed Succesfully.
 2024-07-15T17:33:46.262Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T08:42:19.982Z - Render Page - Render login page.
+2024-07-16T08:42:23.840Z - Authentication - User: undefined - Login successful
+2024-07-16T08:42:23.845Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-16T08:42:23.868Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T08:42:27.305Z - Authentication - User: undefined - Logout
+2024-07-16T08:43:34.318Z - Authentication - Logout
+2024-07-16T08:43:34.332Z - Render Page - Render login page.
+2024-07-16T08:43:45.035Z - Authentication - User: angeline_shi@dlsu.edu.ph - Login successful
+2024-07-16T08:43:45.039Z - Render Page - User: angeline_shi@dlsu.edu.ph - Render index page.
+2024-07-16T08:43:45.046Z - Render Page - User: angeline_shi@dlsu.edu.ph - Render applications page.
+2024-07-16T08:43:46.788Z - Render Page - User: angeline_shi@dlsu.edu.ph - Render request form.
+2024-07-16T08:43:49.954Z - Authentication - User: angeline_shi@dlsu.edu.ph - Logout
+2024-07-16T08:43:49.962Z - Render Page - Render login page.
+2024-07-16T08:44:07.783Z - Render Page - Render register page.
+2024-07-16T08:44:32.243Z - Render Page - Render register page.
+2024-07-16T08:45:03.336Z - Create User - User: angeline_shi@email.com Created.
+2024-07-16T08:45:03.344Z - Render Page - Render login page.
+2024-07-16T08:45:10.782Z - Render Page - Render login page.
+2024-07-16T08:45:21.506Z - Authentication - User: angeline_shi@email.com - Login successful
+2024-07-16T08:45:21.510Z - Render Page - User: angeline_shi@email.com - Render index page.
+2024-07-16T08:45:21.513Z - Render Page - User: angeline_shi@email.com - Render applications page.
+2024-07-16T08:45:23.044Z - Render Page - User: angeline_shi@email.com - Render request form.
+2024-07-16T08:45:24.882Z - Render Page - User: angeline_shi@email.com - Render applications page.
+2024-07-16T08:45:29.618Z - Render Page - User: angeline_shi@email.com - Render applications page.

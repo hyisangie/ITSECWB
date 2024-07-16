@@ -18,7 +18,7 @@ const User = {
 
     get_users: () => {
         return new Promise((resolve, reject) => {
-            const query = 'SELECT * FROM users'; // Replace 'users' with your table name
+            const query = 'SELECT * FROM users'; 
             db.query(query, (error, results, fields) => {
               if (error) {
                 return reject(error);
