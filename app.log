@@ -11,3 +11,105 @@
 2024-07-15T17:33:33.163Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
 2024-07-15T17:33:46.257Z - Admin Action - User: admin@email.com - Performed action: Status Changed Succesfully.
 2024-07-15T17:33:46.262Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T07:35:13.316Z - Render Page - Render login page.
+2024-07-16T07:35:35.878Z - Render Page - Render register page.
+2024-07-16T07:35:52.536Z - Create User - User: patrickbennettong@yahoo.com Created.
+2024-07-16T07:35:52.554Z - Render Page - Render login page.
+2024-07-16T07:37:08.748Z - Render Page - Render register page.
+2024-07-16T07:38:51.817Z - Render Page - Render register page.
+2024-07-16T07:39:15.667Z - Render Page - Render register page.
+2024-07-16T07:55:51.179Z - Render Page - Render login page.
+2024-07-16T07:55:55.748Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T07:55:55.760Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T07:55:55.771Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T07:56:02.462Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T07:56:02.465Z - Error - User: patrickbennettong@yahoo.com - Render request form: ReferenceError: items is not defined
+    at render_request_form (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\controller\application.js:61:49)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:149:13)
+    at exports.isAuth (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\middlewares\session.js:11:7)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\index.js:346:12)
+2024-07-16T07:56:04.384Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T07:56:13.282Z - Render Page - User: patrickbennettong@yahoo.com - Render profile page.
+2024-07-16T07:56:15.540Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:01:46.501Z - Render Page - Render login page.
+2024-07-16T08:03:42.522Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:03:42.531Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:03:42.539Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:03:43.785Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:03:43.788Z - Error - User: patrickbennettong@yahoo.com - Render request form: ReferenceError: items is not defined
+    at render_request_form (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\controller\application.js:61:49)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:149:13)
+    at exports.isAuth (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\middlewares\session.js:11:7)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\index.js:346:12)
+2024-07-16T08:09:52.490Z - Render Page - Render login page.
+2024-07-16T08:12:50.274Z - Render Page - Render login page.
+2024-07-16T08:12:54.684Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:12:54.692Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:12:54.703Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:12:56.150Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:12:56.152Z - Error - User: patrickbennettong@yahoo.com - Render request form: ReferenceError: user is not defined
+    at render_request_form (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\controller\application.js:61:62)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-07-16T08:14:06.889Z - Render Page - Render login page.
+2024-07-16T08:14:11.324Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:14:11.334Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:14:11.344Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:20:35.626Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:21:57.751Z - Authentication - User: patrickbennettong@yahoo.com - Logout
+2024-07-16T08:22:00.807Z - Render Page - Render login page.
+2024-07-16T08:22:05.661Z - Render Page - Render login page.
+2024-07-16T08:22:09.259Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:22:09.269Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:22:09.280Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:23:16.735Z - Render Page - Render login page.
+2024-07-16T08:23:27.453Z - Render Page - Render login page.
+2024-07-16T08:23:30.704Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:23:30.718Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:23:30.733Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:24:06.598Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:25:18.279Z - Render Page - Render login page.
+2024-07-16T08:25:22.131Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:25:22.142Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:25:22.158Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:25:23.338Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:25:23.341Z - Error - User: patrickbennettong@yahoo.com - Render request form: ReferenceError: items is not defined
+    at render_request_form (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\controller\application.js:61:49)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:149:13)
+    at exports.isAuth (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\middlewares\session.js:11:5)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\layer.js:95:5)
+    at F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (F:\Downloads\ITSECWB\ITSECWB_Final_Project\ITSECWB\node_modules\express\lib\router\index.js:346:12)
+2024-07-16T08:26:33.095Z - Render Page - Render login page.
+2024-07-16T08:26:36.680Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:26:36.689Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:26:36.701Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:26:37.644Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:27:34.252Z - Update Application - User: patrickbennettong@yahoo.com - Application not found
+2024-07-16T08:27:41.258Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:28:00.078Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:28:04.567Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:30:47.959Z - Update Application - User: patrickbennettong@yahoo.com - Application not found
+2024-07-16T08:31:17.396Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:31:19.377Z - Render Page - User: patrickbennettong@yahoo.com - Render profile page.
+2024-07-16T08:31:21.126Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:31:29.793Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:31:32.764Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:32:53.657Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:32:59.747Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:37:17.767Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.

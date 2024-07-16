@@ -1,7 +1,7 @@
 const Application = require("../models/application");
 const Item = require("../models/item");
 const logger = require("../utils/logger");
-const {handleError} = require("../utils/error_handler");
+const { handleError } = require("../utils/error_handler");
 
 const application = {
     render_application: async function (req, res) {
@@ -23,8 +23,8 @@ const application = {
                     applications = await Application.findByEmail(email);
                 }
             }
-            
-            if(req.session.user !== undefined && req.session.user.role === "admin") {
+
+            if (req.session.user !== undefined && req.session.user.role === "admin") {
                 logger.adminAction(req.session.user, "Render applications page.")
             } else {
                 logger.log("Render Page", req.session.user, "Render applications page.")
@@ -36,8 +36,8 @@ const application = {
             return res.render('404');
         }
     },
-    render_request_form: async function(req, res) {
-        try{
+    render_request_form: async function (req, res) {
+        try {
             if (req.path === '/edit-form') {
                 const items = await Item.get_items();
                 const user = req.session.user;
@@ -51,24 +51,24 @@ const application = {
                     return res.status(404).send('Application not found or you do not have permission to edit');
                 }
             }
-    
-            
-            if(req.session.user !== undefined && req.session.user.role === "admin") {
+
+
+            if (req.session.user !== undefined && req.session.user.role === "admin") {
                 logger.adminAction(req.session.user, "Render request form.")
             } else {
                 logger.log("Render Page", req.session.user, "Render request form.")
             }
             res.render("request-form", { items: items, user: user, application: application });
-        } catch(err) {
+        } catch (err) {
             handleError(err)
             logger.log("Error", req.session.user, "Render request form: " + err.stack)
             return res.render('404');
         }
- 
+
     },
-    
+
     apply: async function (req, res) {
-        try{
+        try {
             const { item_id, quantity, purpose } = req.body;
             const applicant_email = req.session.user.email;
             const newApplication = { item_id, quantity, purpose, applicant_email };
@@ -82,7 +82,7 @@ const application = {
                 res.redirect("/");
             });
             logger.log("Apply", req.session.user, "Apply failed.")
-        }catch(err){
+        } catch (err) {
             handleError(err)
             logger.log("Error", req.session.user, "Apply: " + err.stack)
             return res.render('404');
@@ -103,13 +103,13 @@ const application = {
             return res.render('404');
         }
     },
-    update_application: async function(req, res) {
+    update_application: async function (req, res) {
 
         try {
             const applicationId = req.params.id;
             const user = req.session.user;
             const { item_id, quantity, purpose } = req.body;
-        
+
             // check if app exists
             const application = await Application.findById(applicationId);
             if (!application) {
@@ -124,7 +124,7 @@ const application = {
                 logger.log("Update Application", req.session.user, "Only pending applications can be updated")
                 return res.status(400).send('Only pending applications can be updated');
             }
-    
+
             // update app
             await Application.updateById(applicationId, { item_id, quantity, purpose });
             logger.log("Update Application", req.session.user, "Update Application Succesfully.")
