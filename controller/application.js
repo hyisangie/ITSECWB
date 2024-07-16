@@ -41,6 +41,7 @@ const application = {
             const items = await Item.get_items();
             const user = req.session.user;
             let application = null;
+            const error = req.flash('error');
             if (req.path === '/edit-form') {
                 const applicationId = req.query.id;
                 if (!applicationId) {
@@ -58,7 +59,7 @@ const application = {
             } else {
                 logger.log("Render Page", req.session.user, "Render request form.")
             }
-            res.render("request-form", { items: items, user: user, application: application });
+            res.render("request-form", { items: items, user: user, application: application, error: error });
         } catch (err) {
             handleError(err)
             logger.log("Error", req.session.user, "Render request form: " + err.stack)
@@ -114,24 +115,31 @@ const application = {
             const application = await Application.findById(applicationId);
             if (!application) {
                 logger.log("Update Application", req.session.user, "Application not found")
-                return res.status(404).send('Application not found');
+                req.flash("error", 'Application not found');
+                return res.redirect(`/edit-form?id=${applicationId}`);
             }
             if (application.applicant_email !== user.email) {
                 logger.log("Update Application", req.session.user, "You do not have permission to update this application")
-                return res.status(403).send('You do not have permission to update this application');
+                req.flash("error", 'You do not have permission to update this application');
+                return res.redirect(`/edit-form?id=${applicationId}`);
             }
             if (application.status !== 'pending') {
                 logger.log("Update Application", req.session.user, "Only pending applications can be updated")
-                return res.status(400).send('Only pending applications can be updated');
+                req.flash("error", 'Only pending applications can be updated');
+                return res.redirect(`/edit-form?id=${applicationId}`);
             }
-
-            // update app
-            await Application.updateById(applicationId, { item_id, quantity, purpose });
-            logger.log("Update Application", req.session.user, "Update Application Succesfully.")
-            res.redirect('/applications');
+            if (typeof quantity === 'number' && !isNaN(quantity)) {
+                await Application.updateById(applicationId, { item_id, quantity, purpose });
+                logger.log("Update Application", req.session.user, "Update Application Succesfully.")
+                return render('/applications')
+            } else {
+                logger.log("Update Application", req.session.user, "Quantity is not a number or a null")
+                req.flash("error", 'Quantity is not a number or a null');
+                return res.redirect(`/edit-form?id=${applicationId}`);
+            }
         } catch (error) {
-            handleError(err)
-            logger.log("Error", req.session.user, "Update Application: " + err.stack)
+            handleError(error)
+            logger.log("Error", req.session.user, "Update Application: " + error.stack)
             return res.render('404');
         }
     },

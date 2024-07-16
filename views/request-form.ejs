@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stationery Application System</title>
 </head>
+
 <body>
     <h1>Stationery Application System</h1>
     <p><a href="/applications">My Applications</a> | <a href="/logout">Logout</a></p>
 
-    <% if (user.role == "admin") { %>
+    <% if (user.role=="admin" ) { %>
         <a href="/admin">Admin Panel</a>
-    <% } else { %>
-        <h2><%= application ? 'Edit Application' : 'Submit New Application' %></h2>
-        <form action="<%= application ? '/update-application/' + application.id : '/apply' %>" method="POST">
-            <select name="item_id" required>
-                <% items.forEach(function(item) { %>
-                    <option value="<%= item.id %>" <%= application && application.item_id == item.id ? 'selected' : '' %>><%= item.name %></option>
-                <% }); %>
-            </select>
-            <input type="number" name="quantity" required min="1" placeholder="Quantity" value="<%= application ? application.quantity : '' %>">
-            <p><textarea name="purpose" required placeholder="Purpose"><%= application ? application.purpose : '' %></textarea></p>
-            <p><button type="submit"><%= application ? 'Update Application' : 'Submit Application' %></button></p>
-        </form>
-    <% }%>
+        <% } else { %>
+            <h2>
+                <%= application ? 'Edit Application' : 'Submit New Application' %>
+            </h2>
+            <form action="<%= application ? '/update-application/' + application.id : '/apply' %>" method="POST">
+                <select name="item_id" required>
+                    <% items.forEach(function(item) { %>
+                        <option value="<%= item.id %>" <%=application && application.item_id==item.id ? 'selected' : ''
+                            %>><%= item.name %>
+                        </option>
+                        <% }); %>
+                </select>
+                <input type="number" name="quantity" required min="1" placeholder="Quantity"
+                    value="<%= application ? application.quantity : '' %>">
+                <p><textarea name="purpose" required
+                        placeholder="Purpose"><%= application ? application.purpose : '' %></textarea></p>
+                <p><button type="submit">
+                        <%= application ? 'Update Application' : 'Submit Application' %>
+                    </button></p>
+            </form>
+            <% }%>
+                <% if (error) { %>
+                    <p id="error" style="color: red;">
+                        <%= error %>
+                    </p>
+                    <% } %>
 </body>
+
 </html>

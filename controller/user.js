@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const logger = require("../utils/logger");
 const { handleError } = require("../utils/error_handler");
 const User = require("../models/user");
+const { error } = require("console");
 
 const LOGGED_IN = 1;
 const LOGGED_OUT = 0;
@@ -138,6 +139,10 @@ const user = {
                     return res.redirect("/");
                 }
 
+                if (user.isLocked === 1) {
+                    req.flash("error", "Your account has been locked. Please contact your administrator.")
+                    return res.redirect("/");
+                }
                 req.session.loginAttempts = 0;
 
                 req.session.user = user;
@@ -276,6 +281,22 @@ const user = {
             return res.render('404');
         }
     },
+
+    unlock_user: function (req, res) {
+        const id = req.params.user_id;
+
+        User.unlock_user(id)
+            .then(() => {
+                logger.log("Unlocked User:", req.session.user, "User is now unlocked");
+                return;
+            })
+            .catch((error) => {
+                logger.log("Error", req.session.user, "Database error: " + error);
+                return;
+            });
+
+        return res.redirect('/admin')
+    }
 };
 
 module.exports = user;

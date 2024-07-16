@@ -14,18 +14,18 @@ const application = require("./controller/application");
 
 router.get("/register", user.render_register);
 router.post(
-    "/register-user",
-    upload,
-    checkMagicNumber,
-    user.create_user,
-    (error, req, res, next) => {
-        if (error) {
-          req.flash("error", error.message);
-          const err = new Error();
-          err.status = 500
-          return res.redirect("/register");
-        }
+  "/register-user",
+  upload,
+  checkMagicNumber,
+  user.create_user,
+  (error, req, res, next) => {
+    if (error) {
+      req.flash("error", error.message);
+      const err = new Error();
+      err.status = 500
+      return res.redirect("/register");
     }
+  }
 );
 
 router.get("/", user.render_index);
@@ -45,6 +45,7 @@ router.get("/applications", isAuth, application.render_application);
 router.post("/update-status/:id", checkAuth, application.change_status);
 router.get("/edit-form", isAuth, application.render_request_form);
 router.post("/update-application/:id", isAuth, application.update_application);
+router.get('/unlock_user/:user_id', user.unlock_user);
 
 // Handle 404 - Not Found
 router.use((req, res, next) => {

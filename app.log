@@ -35,3 +35,142 @@
 2024-07-16T08:45:23.044Z - Render Page - User: angeline_shi@email.com - Render request form.
 2024-07-16T08:45:24.882Z - Render Page - User: angeline_shi@email.com - Render applications page.
 2024-07-16T08:45:29.618Z - Render Page - User: angeline_shi@email.com - Render applications page.
+2024-07-16T08:53:44.693Z - Render Page - Render login page.
+2024-07-16T08:53:51.656Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T08:53:51.666Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:53:51.684Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:53:52.876Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T08:54:04.362Z - Apply - User: patrickbennettong@yahoo.com - Apply failed.
+2024-07-16T08:54:04.365Z - Apply - User: patrickbennettong@yahoo.com - Apply Stationery.
+2024-07-16T08:54:04.373Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T08:54:04.388Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:54:29.670Z - Render Page - User: patrickbennettong@yahoo.com - Render profile page.
+2024-07-16T08:54:31.218Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T08:54:33.043Z - Authentication - User: patrickbennettong@yahoo.com - Logout
+2024-07-16T08:54:33.064Z - Render Page - Render login page.
+2024-07-16T08:54:33.891Z - Render Page - Render register page.
+2024-07-16T08:55:03.099Z - Render Page - Render register page.
+2024-07-16T14:26:06.362Z - Render Page - Render login page.
+2024-07-16T14:26:12.528Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T14:26:12.538Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T14:26:12.552Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:26:16.566Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:27:29.562Z - Render Page - Render login page.
+2024-07-16T14:27:34.545Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T14:27:34.554Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T14:27:34.565Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:27:35.529Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:30:52.842Z - Render Page - Render login page.
+2024-07-16T14:30:59.252Z - Render Page - Render login page.
+2024-07-16T14:31:03.362Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T14:31:03.370Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T14:31:03.381Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:31:04.336Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:38:18.033Z - Render Page - Render login page.
+2024-07-16T14:38:22.801Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T14:38:22.813Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T14:38:22.831Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:38:23.781Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:38:36.267Z - Update Application - User: patrickbennettong@yahoo.com - Quantity is not a number or a null
+2024-07-16T14:44:27.213Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:44:28.256Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:44:29.758Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:44:32.721Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:44:35.622Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:45:15.223Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:45:16.260Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:52:25.666Z - Render Page - Render login page.
+2024-07-16T14:52:28.619Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T14:52:28.630Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T14:52:28.645Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:52:29.622Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:54:49.163Z - Render Page - Render login page.
+2024-07-16T14:54:52.217Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T14:54:52.226Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T14:54:52.239Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T14:54:53.284Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T14:55:15.240Z - Update Application - User: patrickbennettong@yahoo.com - Quantity is not a number or a null
+2024-07-16T15:01:52.871Z - Render Page - Render login page.
+2024-07-16T15:01:57.928Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T15:01:57.938Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T15:01:57.949Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T15:01:59.040Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T15:02:10.677Z - Update Application - User: patrickbennettong@yahoo.com - Quantity is not a number or a null
+2024-07-16T15:04:39.772Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T15:09:57.897Z - Authentication - Logout
+2024-07-16T15:09:57.933Z - Render Page - Render login page.
+2024-07-16T15:10:01.582Z - Authentication - User: patrickbennettong@yahoo.com - Login successful
+2024-07-16T15:10:01.604Z - Render Page - User: patrickbennettong@yahoo.com - Render index page.
+2024-07-16T15:10:01.631Z - Render Page - User: patrickbennettong@yahoo.com - Render applications page.
+2024-07-16T15:10:02.424Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T15:10:09.394Z - Update Application - User: patrickbennettong@yahoo.com - Quantity is not a number or a null
+2024-07-16T15:10:09.404Z - Render Page - User: patrickbennettong@yahoo.com - Render request form.
+2024-07-16T15:42:21.968Z - Render Page - Render login page.
+2024-07-16T15:42:47.894Z - Render Page - Render login page.
+2024-07-16T15:43:08.421Z - Render Page - Render login page.
+2024-07-16T15:43:12.714Z - Authentication - User: undefined - Login successful
+2024-07-16T15:43:12.722Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-16T15:43:12.733Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T15:43:16.855Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T15:57:55.405Z - Authentication - Logout
+2024-07-16T15:57:55.434Z - Render Page - Render login page.
+2024-07-16T15:58:00.179Z - Render Page - Render login page.
+2024-07-16T15:58:03.905Z - Render Page - Render login page.
+2024-07-16T15:58:06.582Z - Render Page - Render login page.
+2024-07-16T15:58:23.242Z - Render Page - Render login page.
+2024-07-16T15:58:27.412Z - Render Page - Render login page.
+2024-07-16T15:58:30.689Z - Render Page - Render login page.
+2024-07-16T15:58:33.615Z - Render Page - Render login page.
+2024-07-16T15:58:42.607Z - Render Page - Render login page.
+2024-07-16T15:58:48.547Z - Render Page - Render login page.
+2024-07-16T15:58:51.919Z - Render Page - Render login page.
+2024-07-16T15:59:02.060Z - Render Page - Render login page.
+2024-07-16T16:17:33.812Z - Render Page - Render login page.
+2024-07-16T16:17:42.264Z - Render Page - Render login page.
+2024-07-16T16:17:45.056Z - Render Page - Render login page.
+2024-07-16T16:17:47.999Z - Render Page - Render login page.
+2024-07-16T16:18:03.714Z - Render Page - Render login page.
+2024-07-16T16:18:07.099Z - Render Page - Render login page.
+2024-07-16T16:18:17.760Z - Render Page - Render login page.
+2024-07-16T16:18:21.055Z - Render Page - Render login page.
+2024-07-16T16:19:39.815Z - Render Page - Render login page.
+2024-07-16T16:20:16.639Z - Render Page - Render login page.
+2024-07-16T16:20:19.270Z - Render Page - Render login page.
+2024-07-16T16:20:22.089Z - Render Page - Render login page.
+2024-07-16T16:20:50.947Z - Render Page - Render login page.
+2024-07-16T16:20:53.746Z - Render Page - Render login page.
+2024-07-16T16:20:57.544Z - Render Page - Render login page.
+2024-07-16T16:21:07.701Z - Render Page - Render login page.
+2024-07-16T16:49:21.480Z - Authentication - User: undefined - Login successful
+2024-07-16T16:49:21.498Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-16T16:49:21.514Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T16:49:23.646Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:51:49.685Z - Render Page - Render login page.
+2024-07-16T16:52:07.259Z - Authentication - User: undefined - Login successful
+2024-07-16T16:52:07.276Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-16T16:52:07.288Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T16:52:08.750Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:52:32.409Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:52:38.760Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:55:40.184Z - Render Page - Render login page.
+2024-07-16T16:55:45.632Z - Authentication - User: undefined - Login successful
+2024-07-16T16:55:45.642Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-16T16:55:45.654Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T16:55:46.438Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:56:03.881Z - Unlocked User: - User is now unlocked
+2024-07-16T16:56:03.906Z - Render Page - Render login page.
+2024-07-16T16:56:09.123Z - Authentication - User: undefined - Login successful
+2024-07-16T16:56:09.131Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-16T16:56:09.144Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T16:56:09.945Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:56:22.940Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:56:24.475Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T16:56:25.335Z - Authentication - User: undefined - Logout
+2024-07-16T16:56:25.356Z - Render Page - Render login page.
+2024-07-16T16:56:28.634Z - Render Page - Render login page.
+2024-07-16T16:56:34.336Z - Authentication - User: undefined - Login successful
+2024-07-16T16:56:34.347Z - Admin Action - User: admin@email.com - Performed action: Render index page.
+2024-07-16T16:56:34.359Z - Admin Action - User: admin@email.com - Performed action: Render applications page.
+2024-07-16T16:56:35.304Z - Admin Action - User: admin@email.com - Performed action: Render admin page.
+2024-07-16T16:56:36.789Z - Unlocked User: - User: admin@email.com - User is now unlocked
+2024-07-16T16:56:36.800Z - Admin Action - User: admin@email.com - Performed action: Render admin page.

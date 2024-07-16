@@ -10,7 +10,8 @@ CREATE TABLE ITSECWB_DB.users (
     password VARCHAR(255) NOT NULL,
     phone VARCHAR(20) NOT NULL UNIQUE,
     profile_photo VARCHAR(45) NOT NULL,
-    role ENUM('admin', 'user') NOT NULL DEFAULT 'user' 
+    role ENUM('admin', 'user') NOT NULL DEFAULT 'user',
+    isLocked TINYINT(1) NOT NULL DEFAULT 0
 );
 
 CREATE USER IF NOT EXISTS 'itsecur'@'%' IDENTIFIED BY 'lingui250!';
