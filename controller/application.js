@@ -38,10 +38,10 @@ const application = {
     },
     render_request_form: async function (req, res) {
         try {
+            const items = await Item.get_items();
+            const user = req.session.user;
+            let application = null;
             if (req.path === '/edit-form') {
-                const items = await Item.get_items();
-                const user = req.session.user;
-                let application = null;
                 const applicationId = req.query.id;
                 if (!applicationId) {
                     return res.status(400).send('Application ID is required for editing');
